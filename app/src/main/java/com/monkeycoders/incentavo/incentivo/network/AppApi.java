@@ -23,8 +23,9 @@ public interface  AppApi {
     @POST("/operaciones/cargo")
     HashMap<String, Object> postCargo(@Body HashMap<String, Object> credentials);
 
-
-
+    @Headers("Content-Type: application/json")
+    @POST("/operaciones/tef")
+    HashMap<String, Object> postTEF(@Body HashMap<String, Object> credentials);
 
 
     //EndPoints Fake
@@ -44,9 +45,8 @@ public interface  AppApi {
     @GET("/items.json")
     HashMap<String, Object> getCatalog();
 
-    // socket
     @Headers("Content-Type: application/json")
-    @GET("/")
-    HashMap<String, Object> openDashboard();
+    @POST("")
+    HashMap<String, Object> postTransferencia();
 
 }

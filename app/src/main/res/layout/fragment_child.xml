@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/flexible_space_image_height"
         android:scaleType="centerCrop"
-        android:src="@drawable/android_background" />
+        android:background="@drawable/android_background"/>
 
     <View
         android:id="@+id/overlay"
@@ -40,9 +40,8 @@
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:maxLines="1"
-            android:minHeight="?attr/actionBarSize"
-            android:textColor="@android:color/white"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textColor="@android:color/white"/>
 
         <View
             android:layout_width="match_parent"

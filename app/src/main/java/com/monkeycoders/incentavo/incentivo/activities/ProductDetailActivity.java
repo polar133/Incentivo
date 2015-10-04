@@ -109,14 +109,22 @@ public class ProductDetailActivity extends BaseActivity {
     private void buyProduct(){
 
         new SweetAlertDialog(this, SweetAlertDialog.WARNING_TYPE)
-                .setTitleText("Are you sure?")
-                .setContentText("Won't be able to recover this file!")
-                .setConfirmText("Yes,delete it!")
+                .setTitleText("Esta seguro que desea comprar?")
+                .setContentText("Implica un gasto importante en sus ahorros!")
+                .setConfirmText("Si")
                 .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
                     @Override
                     public void onClick(SweetAlertDialog sDialog) {
-                        BuyProductTask buyProductTask = new BuyProductTask(sDialog);
-                        buyProductTask.execute();
+                        sDialog.setTitleText("Comprado!")
+                                .setContentText("Has comprado el producto seleccionado!")
+                                .setConfirmText("OK")
+                                .setConfirmClickListener(new SweetAlertDialog.OnSweetClickListener() {
+                                    @Override
+                                    public void onClick(SweetAlertDialog sweetAlertDialog) {
+                                        ProductDetailActivity.this.finish();
+                                    }
+                                })
+                                .changeAlertType(SweetAlertDialog.SUCCESS_TYPE);
                     }
                 })
                 .show();

@@ -18,10 +18,14 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.monkeycoders.incentavo.incentivo.R;
+import com.monkeycoders.incentavo.incentivo.models.ChildrenData;
+import com.monkeycoders.incentavo.incentivo.models.Dao.ChildDao;
+import com.monkeycoders.incentavo.incentivo.models.Dao.Impl.ChildrenDataDaoImpl;
 import com.monkeycoders.incentavo.incentivo.services.UserService;
+import org.json.JSONObject;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 
@@ -36,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText mUsernameView, mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
-
+    private ChildDao childDao;
     private UserLoginTask mAuthTask = null;
 
     @Override
@@ -48,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         super.onCreate(savedInstanceState);
-        preferences = getSharedPreferences("AppPref", Context.MODE_PRIVATE);
         setContentView(R.layout.activity_login);
         // Set up the login form.
         mUsernameView = (EditText) findViewById(R.id.username);
@@ -64,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                 return false;
             }
         });
-
+        childDao = new ChildrenDataDaoImpl();
         Button mSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mSignInButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -211,8 +214,16 @@ public class LoginActivity extends AppCompatActivity {
                 SharedPreferences.Editor prefEditor = preferences.edit();
                 prefEditor.putBoolean("is_parent", is_parent);
                 if (!is_parent){
-                    prefEditor.putFloat("tope", (float) incentivo_object.get("maximun_financing"));
-                    prefEditor.putFloat("porcentaje", (float) incentivo_object.get("pecentage_financing"));
+                    prefEditor.putFloat("tope", ((Double)  (double) incentivo_object.get("maximun_financing")).floatValue());
+                    prefEditor.putFloat("porcentaje",((Double)  (double) incentivo_object.get("pecentage_financing")).floatValue());
+                }else{
+                    ArrayList<HashMap<String, Object>> list_object = (ArrayList<HashMap<String, Object>>) incentivo_object.get("children");
+                    ArrayList<ChildrenData> childrenDatas = new ArrayList<>();
+                    for (HashMap<String, Object> object : list_object){
+                        HashMap<String, Object> info = (HashMap<String, Object>) object.get("info");
+
+                    }
+                    childDao.saveChildrens(childrenDatas);
                 }
                 prefEditor.putBoolean("loggedIn", true);
                 prefEditor.putString("rut", mUsuario);

@@ -38,14 +38,9 @@ public class CatalogPageFragment extends Fragment {
 
         CatalogAdapter mAdapter = new CatalogAdapter(getContext(), R.id.product_item_title);
 
-        //ArrayList<String> mData = SampleData.generateSampleData(index*10);
-
-        /*
-        for (String data : mData) {
-
+        for (CatalogItem data : catalogItems) {
             mAdapter.add(data);
         }
-         */
         gridView.setAdapter(mAdapter);
         return rootView;
 

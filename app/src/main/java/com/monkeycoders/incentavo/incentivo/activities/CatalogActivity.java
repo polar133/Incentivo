@@ -66,13 +66,13 @@ public class CatalogActivity extends BaseActivity {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    return CatalogPageFragment.newInstance(new ArrayList<CatalogItem>());
+                    return CatalogPageFragment.newInstance(tecnoList);
 
                 case 1:
-                    return CatalogPageFragment.newInstance(new ArrayList<CatalogItem>());
+                    return CatalogPageFragment.newInstance(ropaList);
 
                 case 2:
-                    return CatalogPageFragment.newInstance(new ArrayList<CatalogItem>());
+                    return CatalogPageFragment.newInstance(otrosList);
 
                 default:
                     return CatalogPageFragment.newInstance(new ArrayList<CatalogItem>());

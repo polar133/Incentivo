@@ -9,7 +9,11 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import com.monkeycoders.incentavo.incentivo.Items.ChildCard;
 import com.monkeycoders.incentavo.incentivo.R;
+import com.monkeycoders.incentavo.incentivo.activities.HistoryActivity;
 import com.monkeycoders.incentavo.incentivo.activities.ProductDetailActivity;
+import com.monkeycoders.incentavo.incentivo.models.Dao.ChildDao;
+import com.monkeycoders.incentavo.incentivo.models.Dao.Impl.ChildrenDataDaoImpl;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,12 +65,12 @@ public class ChildAdapter extends ArrayAdapter<ChildCard> {
         }
         final ChildCard card = getItem(position);
         viewHolder.name.setText(card.getName());
-        viewHolder.image.setImageResource(R.mipmap.ic_launcher);
+        //viewHolder.image.setImageResource(R.mipmap.ic_launcher);
 
         row.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getContext(), ProductDetailActivity.class);
+                Intent intent = new Intent(getContext(), HistoryActivity.class);
                 intent.putExtra("child_id", card.getId());
                 getContext().startActivity(intent);
             }

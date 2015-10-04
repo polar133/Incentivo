@@ -27,7 +27,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_catalog_detail">CatalogDetailActivity</string>
     <string name="title_activity_profile_children">ProfileChildrenActivity</string>
-    <string name="title_activity_history">HistoryActivity</string>
-    <string name="title_activity_transfer">TransferActivity</string>
-    <string name="title_activity_qr">QRActivity</string>
+    <string name="title_activity_history">Cartola</string>
+    <string name="title_activity_transfer">Transferencia</string>
+    <string name="title_activity_qr">Control Web</string>
 </resources>

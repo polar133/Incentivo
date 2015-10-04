@@ -12,14 +12,16 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.etsy.android.grid.util.DynamicHeightTextView;
+import com.monkeycoders.incentavo.incentivo.Items.CatalogItem;
 import com.monkeycoders.incentavo.incentivo.R;
 import com.monkeycoders.incentavo.incentivo.activities.CatalogDetailActivity;
 import com.monkeycoders.incentavo.incentivo.activities.ProductDetailActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-public class CatalogAdapter extends ArrayAdapter<String> {
+public class CatalogAdapter extends ArrayAdapter<CatalogItem> {
     private static final String TAG = "SampleAdapter";
 
     static class ViewHolder {
@@ -35,6 +37,11 @@ public class CatalogAdapter extends ArrayAdapter<String> {
         super(context, textViewResourceId);
         mLayoutInflater = LayoutInflater.from(context);
         mRandom = new Random();
+    }
+
+    @Override
+    public void add(CatalogItem object) {
+        super.add(object);
     }
 
     @Override
@@ -65,10 +72,10 @@ public class CatalogAdapter extends ArrayAdapter<String> {
         });
 
         vh.txtTitle.setHeightRatio(positionHeight);
-        vh.txtTitle.setText(getItem(position) + position);
+        vh.txtTitle.setText("Texto");
 
         vh.txtPrice.setHeightRatio(positionHeight);
-        vh.txtPrice.setText(getItem(position) + position);
+        vh.txtPrice.setText("Texto 2");
 
         return convertView;
     }
