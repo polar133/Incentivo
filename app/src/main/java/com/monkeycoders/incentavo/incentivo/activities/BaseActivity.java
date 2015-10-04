@@ -15,6 +15,10 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.johnpersano.supertoasts.SuperToast;
 import com.monkeycoders.incentavo.incentivo.R;
 
+/*
+Activity with generic functionalities which will be used in next activities
+*/
+
 public class BaseActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
