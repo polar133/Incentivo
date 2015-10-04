@@ -9,6 +9,11 @@ import retrofit.http.Path;
 import retrofit.http.Query;
 
 public interface  AppApi {
+    
+    /*
+    Declaration of services wich connect with external servises such as bank's api and fake data
+    */
+    
     //Seguridad
     @GET("")
     HashMap<String, Object> getLogin(@Query("login") String login, @Query("password") String password);
