@@ -4,6 +4,11 @@ import retrofit.RestAdapter;
 import retrofit.converter.JacksonConverter;
 
 public class ApiManager {
+    
+    /*
+    host of api servers, hardcoded just for time.
+    */
+    
     private static final String API_URL = "http://192.168.27.125:3000";
     private static final String API_BANCO = "http://192.168.27.2:9001/BChHackatonAPI/webrest";
     private static final String API_SOCKET = "http://192.168.27.79:7777";
