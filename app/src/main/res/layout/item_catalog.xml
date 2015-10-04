@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:id="@+id/panel_content"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:background="@color/accent">
+
+    <ImageView
+        android:id="@+id/product_item_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:scaleType="centerCrop"/>
+
+
+    <com.etsy.android.grid.util.DynamicHeightTextView
+        android:id="@+id/product_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:padding="15dp"
+        android:textColor="@android:color/white"
+        style="@style/Base.TextAppearance.AppCompat.SearchResult.Title"/>
+
+    <com.etsy.android.grid.util.DynamicHeightTextView
+        android:id="@+id/product_item_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:padding="15dp"
+        android:textColor="@android:color/white"
+        style="@style/Base.TextAppearance.AppCompat.SearchResult.Subtitle"/>
+
+</FrameLayout>

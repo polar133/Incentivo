@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.monkeycoders.incentavo.incentivo" >
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <application
+        android:name=".IncentavoApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon" >
+        <activity
+            android:name=".activities.MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
+        <activity
+            android:name=".activities.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.ProductDetailActivity"
+            android:label="@string/title_activity_product_detail"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monkeycoders.incentavo.incentivo.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.CatalogActivity"
+            android:label="@string/title_activity_catalog"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monkeycoders.incentavo.incentivo.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.CatalogDetailActivity"
+            android:label="@string/title_activity_catalog_detail"
+            android:parentActivityName=".activities.CatalogActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monkeycoders.incentavo.incentivo.activities.CatalogActivity" />
+        </activity>
+        <activity
+            android:name=".activities.ProfileChildrenActivity"
+            android:label="@string/title_activity_profile_children"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monkeycoders.incentavo.incentivo.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.HistoryActivity"
+            android:label="@string/title_activity_history"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monkeycoders.incentavo.incentivo.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.TransferActivity"
+            android:label="@string/title_activity_transfer"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monkeycoders.incentavo.incentivo.activities.MainActivity" />
+        </activity>
+        <activity
+            android:name=".activities.QRActivity"
+            android:label="@string/title_activity_qr"
+            android:parentActivityName=".activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.monkeycoders.incentavo.incentivo.activities.MainActivity" />
+        </activity>
+    </application>
+
+</manifest>

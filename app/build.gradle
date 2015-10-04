@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.1"
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/NOTICE'
+    }
+
+    defaultConfig {
+        applicationId "com.monkeycoders.incentavo.incentivo"
+        minSdkVersion 17
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.github.ksoichiro:android-observablescrollview:1.5.2' //Scrollview
+    compile 'com.navercorp.volleyextensions:volley-extensions:1.1.1'
+    compile 'com.dlazaro66.qrcodereaderview:qrcodereaderview:1.0.0' // QR
+    compile('com.afollestad.material-dialogs:core:0.8.1.0@aar') {
+        transitive = true
+    }
+    compile 'com.github.lecho:hellocharts-library:1.5.8@aar' //Graphics
+    compile 'com.squareup.retrofit:converter-jackson:1.6.1' // Converter
+    compile 'com.github.johnpersano:supertoasts:1.3.4@aar'
+    compile 'jp.satorufujiwara:material-scrolling:1.0.1' //Material Scroll
+    compile 'me.drakeet.materialdialog:library:1.2.2' //Dialogs
+    compile 'com.android.support:cardview-v7:23.0.+'
+    compile 'com.github.nirhart:parallaxscroll:1.0' //Parallax
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.etsy.android.grid:library:1.0.5' // Grid
+    compile 'com.mcxiaoke.volley:library:1.0.10'
+    compile 'de.hdodenhof:circleimageview:2.0.0'
+    compile 'com.squareup.picasso:picasso:2.5.2' // Images
+    compile 'com.android.support:design:23.0.1'
+    compile 'com.nineoldandroids:library:2.4.0' //Compatible
+    compile 'cn.pedant.sweetalert:library:1.3' //Alerts
+    compile 'com.michaelpardo:ollie:0.3.1' //Database
+    compile 'com.squareup:otto:1.3.8' //Bus
+}
